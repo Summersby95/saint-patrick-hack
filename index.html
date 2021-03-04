@@ -14,44 +14,62 @@
    <link rel="stylesheet" href="assets/css/style.css">
  </head>
  <body>
+
 <!--Navigation-->
-  <header>
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top">
-        <a class="navbar navbar-brand" href="index.html">St. Patricks Day</a>
-        <button class="navbar-toggler" aria-expanded="false" aria-controls="navbarNavDropDown"
-            aria-label="Toggle navigation" type="button" data-target="#navbarNavDropDown" data-toggle="collapse">
-            <span class="custom-navbar-toggler-icon">
-                <i class="fas fa-bars"></i>
-            </span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropDown">
-            <ul class="navbar-nav">
-                <li class="nav-item  mr-4">
-                    <a class="nav-link active" href="index.html">Home</a>
-                </li>
-                <li class="nav-item mr-4">
-                    <a class="nav-link" href="animalinfo.html">What To Do</a>
-                </li>
-                <li class="nav-item mr-4">
-                    <a class="nav-link" href="contact.html">Instruction</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+  <header class="container-fluid sticky-top py-2">
+    <div class="row align-items-center justify-content-center ">
+      <div class="col-12">
+        <nav class="navbar navbar-expand-md navbar-light">
+            <a class="navbar navbar-brand" href="index.html">St. Patricks Day</a>
+            <button class="navbar-toggler" aria-expanded="false" aria-controls="navbarNavDropDown"
+                aria-label="Toggle navigation" type="button" data-target="#navbarNavDropDown" data-toggle="collapse">
+                <span class="custom-navbar-toggler-icon">
+                    <i class="fas fa-bars"></i>
+                </span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropDown">
+                <ul class="navbar-nav">
+                    <li class="nav-item  mr-4">
+                        <a class="nav-link active" href="#"><i class="fas fa-home pr-2"></i>Home</a>
+                    </li>
+                    <li class="nav-item mr-4">
+                        <a class="nav-link" href="#id-about-stpaddy"><i class="far fa-question-circle pr-2"></i></i>How to play</a>
+                    </li>
+                    <li class="nav-item mr-4">
+                        <a class="nav-link" href="#id-about-stpaddy"><i class="fas fa-info pr-2"></i>About</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+      </div>
+    </div>
   </header>
-  <div class="container-fluid game-container">
-    <div class="row">
-      <div class="col-lg-6 float-left guide">
-        <div class="ins">
-          <h4>How to Play?</h4>
-          <p> Just Use the Arrow keys.<br>Black is snake and Red is Apple.<br>Try to catch the red.</p><br>
-          <span><button class="restart-btn" onclick="restart()">Restart Game</button></span>
+
+<!--Content-->
+  <main class="container-fluid">
+    <!--Game-->
+    <section id="id-game-container" class="row game-container justify-content-center">
+        <div class="col-lg-6 float-left guide">
+          <div class="ins">
+            <h4>How to Play?</h4>
+            <p> Just Use the Arrow keys.<br>Black is snake and Red is Apple.<br>Try to catch the red.</p><br>
+            <span><button class="restart-btn" onclick="restart()">Restart Game</button></span>
           </div>
-      </div>
-      <div class="col-lg-6 float-right">
-        <canvas id="gameboard" width="400" height="400"></canvas>
-      </div>
-  </div>
+        </div>
+        <div class="col-lg-6">
+          <canvas id="gameboard" width="400" height="400"></canvas>
+        </div>
+    </section>
+    <!--About St Patricks Day-->
+    <section id="id-about-stpaddy" class="row justify-content-center">
+      <div class="col-12 text-center"><h2>About St Patricks day</h2></div>
+    </section>
+    <!--About -->
+    <section id="" class="row justify-content-center">
+      <div class="col-12 text-center"><h2>Fun facts</h2></div>
+    </section>
+  </main>
+
   <!--Footer-->
   <footer class="container-fluid fixed-bottom">
     <div id="footer-details" class="row">

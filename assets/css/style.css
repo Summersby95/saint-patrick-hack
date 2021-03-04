@@ -1,14 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Unkempt&display=swap');
+
+:root {
+  --paddygreen: #79d70f;
+}
+
+
 body{
-  background-color: #79d70f;/*#81b214;*/
+  background-color: var(--paddygreen);/*#81b214;*/
   font-size: 1.2rem;
 }
-/*-------------------------NavBar*/
-.navbar-nav li{
-  text-align: right;
-  color:black;
+
+header {
+  box-shadow: 0 0 1rem #000;
 }
+
+section {
+  height: 100vh;
+  font-family: 'Unkempt', cursive;
+  padding-top: 7rem;
+}
+
+/*-------------------------NavBar*/
 .navbar{
-  background-color: #335d2d;
+  font-family: 'Unkempt', cursive;
+  background-color: var(--paddygreen);
   margin-bottom : 0;
   border: 0;
   display: -webkit-box;
@@ -19,27 +34,29 @@ body{
   padding: 0 1rem;
 }
 .navbar-brand{
-    padding-left: 15px;
-    display: inline-block;
-    font-size: 200%;
-    font-weight: 600;
-    height: 50px;;
-    width: 150px;
-    text-align: left;
-    font-style: italic;
+  padding-left: 15px;
+  display: inline-block;
+  font-size: 200%;
+  font-weight: 600;
+  text-align: left;
+  font-style: italic;
 }
 .navbar-nav{
-    font-size: 1.5rem;
-    font-weight: 400;
-    text-align: left;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    margin-bottom: 0;
-    margin-right: 0;
+  font-size: 1.5rem;
+  font-weight: 400;
+  text-align: left;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-bottom: 0;
+  margin-right: 0;
+}
+.navbar-nav li{
+  text-align: right;
+  color:black;
 }
 /*------------------------instruction*/
 .ins{
