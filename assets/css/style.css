@@ -1,0 +1,106 @@
+body{
+  background-color: #79d70f;/*#81b214;*/
+  font-size: 1.2rem;
+}
+/*-------------------------NavBar*/
+.navbar-nav li{
+  text-align: right;
+  color:black;
+}
+.navbar{
+  background-color: #335d2d;
+  margin-bottom : 0;
+  border: 0;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0 1rem;
+}
+.navbar-brand{
+    padding-left: 15px;
+    display: inline-block;
+    font-size: 200%;
+    font-weight: 600;
+    height: 50px;;
+    width: 150px;
+    text-align: left;
+    font-style: italic;
+}
+.navbar-nav{
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-align: left;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    margin-bottom: 0;
+    margin-right: 0;
+}
+/*------------------------instruction*/
+.ins{
+  margin-top: 5rem;
+   margin-bottom: 1.25rem;
+   padding:0 .65rem;
+}
+h4, p{
+  text-align: center;
+}
+.restart-btn {
+  font-size: 20px;
+  background-color: #96bb7c;
+  color: #000000;
+  margin: 10px;
+
+}
+/*----------------------scoreboard*/
+.scoreboard{
+  text-align: center;
+  color: white;
+}
+
+/*-------------------------Game gameboard*/
+#gameboard{
+  display: block;
+  border: 1px solid black;
+  margin-top: 70px;
+  margin-left: 100px;
+
+}
+/*-------------------------Footer*/
+footer {
+  margin: 0;
+  background-color:#335d2d;
+  height: 2.5rem;
+  padding: 0;
+  bottom: 0;
+  width: 100%;
+}
+.social-links{
+    padding-bottom: 1.25rem;
+    float: none;
+}
+
+.social-links li a i {
+    height: 2rem;
+    width: 2rem;
+    padding: 0.75rem 0;
+    border-radius: 50%;
+    font-size: 1.25rem;
+    line-height: 0.625rem;
+    text-align: center;
+    color: #fff;
+    background-color: #000;
+}
+
+.list-inline-items {
+    padding: 0.625rem;
+    display: inline-block;
+}
+#footer-details{
+    text-align: center;
+  }
