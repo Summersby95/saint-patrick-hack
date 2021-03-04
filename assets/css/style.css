@@ -12,6 +12,8 @@ body{
 
 header {
   box-shadow: 0 0 1rem #000;
+  z-index: 20;
+  background-color: var(--paddygreen);
 }
 
 section {
@@ -23,7 +25,6 @@ section {
 /*-------------------------NavBar*/
 .navbar{
   font-family: 'Unkempt', cursive;
-  background-color: var(--paddygreen);
   margin-bottom : 0;
   border: 0;
   display: -webkit-box;
