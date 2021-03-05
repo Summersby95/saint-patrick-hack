@@ -7,7 +7,7 @@
   --magnolia: #e8ebf7ff;
   --yellow-green: #8fc93aff;
   --dark-liver-horses: #523a34ff;
-  --rich-black-fogra-39: #090c08ff; 
+  --rich-black-fogra-39: #090c08ff;
 }
 
 
@@ -119,18 +119,67 @@ section {
   width: 80%;
   height: 50vh;
   background-image: linear-gradient(
-    var(--rich-black-fogra-39) .1em, 
+    var(--rich-black-fogra-39) .1em,
     transparent .1em
   ), linear-gradient(
-    90deg, 
+    90deg,
     var(--rich-black-fogra-39) .1em,
     transparent .1em
   );
   background-size: 4em 4em;
 }
+
+/*------------------------Fun Fact section */
+
+
+.panel-group .panel {
+  border-radius: 0;
+  box-shadow: none;
+  border-color: #EEEEEE;
+}
+
+.panel-default > .panel-heading {
+  padding: 0;
+  border-radius: 0;
+  color: #212121;
+  background-color: #FAFAFA;
+  border-color: #EEEEEE;
+}
+
+.panel-title {
+  font-size: 14px;
+}
+
+.panel-title > a {
+  display: block;
+  padding: 15px;
+  text-decoration: none;
+}
+
+.more-less {
+  float: right;
+  color: #212121;
+}
+
+.panel-default > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #EEEEEE;
+}
+
+.demo {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.panel-title a{
+  text-decoration: none;
+  color: #040C17;
+}
+
+
+
 /*-------------------------Footer*/
 footer {
-  margin: 0;
+  /*margin: 0;*/
   background-color:#335d2d;
   height: 2.5rem;
   padding: 0;
