@@ -79,7 +79,8 @@ const snake = {
     update : function() {
         if(frames % 6 == 0){
             if(foodEaten == true){
-
+                score++;
+                $("#current_score").html(score);
                 this.position.push({
                     x : this.position[this.position.length -1].x,
                     y : this.position[this.position.length -1].y
@@ -139,3 +140,7 @@ function main() {
 
 }
 requestAnimationFrame(main);
+
+$(document).ready(function() {
+    $("#restart_button").click(restart);
+});
