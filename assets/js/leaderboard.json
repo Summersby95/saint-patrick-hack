@@ -1,0 +1,34 @@
+{
+    "leaderboard": [
+        {
+            "pos": 1,
+            "name": "James",
+            "score": 100
+        },
+        {
+            "pos": 2, 
+            "name": "Vijayalakshmi",
+            "score": 99
+        }, 
+        {
+            "pos": 3,
+            "name": "Fran",
+            "score": 98
+        }, 
+        {
+            "pos": 4,
+            "name": "Carolina",
+            "score": 97
+        },
+        {
+            "pos": 5,
+            "name": "Taku",
+            "score": 96
+        },
+        {
+            "pos": 6, 
+            "name": "Helgurd",
+            "score": 95
+        }
+    ]
+}

@@ -50,30 +50,27 @@
   <main class="container-fluid">
     <!--Game-->
     <section id="id-game-container" class="row game-container justify-content-center">
-      <div class="col-lg-8">
-        <div class="game-area">
-          <div class="row">
-            <div class="col-lg-6 col-md-12 game-title">
-              <h2>Paddy's Snakes</h2>
-            </div>
-            <div class="col-lg-3 col-md-6">
-              <h4>Current Score: 0</h4>
-            </div>
-            <div class="col-lg-3 col-md-6">
-              <button class="btn btn-success">
-                <i class="fas fa-sync-alt"></i>
-              </button>
-              <button class="btn btn-success">
-                <i class="fas fa-pause"></i>
-              </button>
-            </div>
-          </div>
-          <canvas id="gameboard"></canvas>
+      <div class="col-lg-8 game-area">
+        <div class="row">
+        <div class="col-lg-6 col-md-12 game-title">
+            <h2>Paddy's Snakes</h2>
         </div>
+        <div class="col-lg-3 col-md-6 game-title">
+            <h4>Current Score: <span id="current_score">0</span></h4>
+        </div>
+        <div class="col-lg-3 col-md-6 game-button-div">
+            <button class="btn game-button" id="restart_button">
+            <i class="fas fa-sync-alt"></i>
+            </button>
+            <button class="btn game-button" id="pause_button">
+            <i class="fas fa-pause"></i>
+            </button>
+        </div>
+        </div>
+        <canvas id="gameboard"></canvas>
       </div>
       <div class="col-lg-4">
-        <div class="guide">
-          <div class="row">
+        <div class="row">
             <div class="col-lg-12 col-md-6 leaderboard">
               <h4>Leaderboard</h4>
               <table class="table table-striped">
@@ -84,37 +81,8 @@
                     <th>Score</th>
                   </tr>
                 </thead>
-                <tbody>
-                  <tr>
-                    <td>1</td>
-                    <td>James</td>
-                    <td>100</td>
-                  </tr>
-                  <tr>
-                    <td>2</td>
-                    <td>Vijayalakshmi</td>
-                    <td>99</td>
-                  </tr>
-                  <tr>
-                    <td>3</td>
-                    <td>Fran</td>
-                    <td>98</td>
-                  </tr>
-                  <tr>
-                    <td>4</td>
-                    <td>Carolina</td>
-                    <td>97</td>
-                  </tr>
-                  <tr>
-                    <td>5</td>
-                    <td>Taku</td>
-                    <td>96</td>
-                  </tr>
-                  <tr>
-                    <td>6</td>
-                    <td>Helgurd</td>
-                    <td>95</td>
-                  </tr>
+                <tbody id="leaderboard-table">
+                  
                 </tbody>
               </table>
             </div>
@@ -128,7 +96,6 @@
                 <li>Have Fun!</li>
               </ol>
             </div>
-          </div>
         </div>
       </div>
     </section>
@@ -302,7 +269,7 @@
     </div>
   </footer>
   <!-- Jquery/Boostrap Links -->
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 

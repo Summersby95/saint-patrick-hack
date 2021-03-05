@@ -1,3 +1,5 @@
+/*jshint esversion: 6 */
+
 const cvs = document.getElementById("gameboard");
 const ctx = cvs.getContext("2d");
 const board_background = "white";
@@ -17,7 +19,7 @@ const direction = {
     down : 2,
     left : 3,
     up : 4
-}
+};
 
 document.addEventListener("keydown", function(evt){
     switch(evt.keyCode){
@@ -54,13 +56,17 @@ const food = {
     r : 10,
 
     draw : function(){
+        // let image = new Image();
+        // image.src="./assets/images/leprachaun.png";
+        // ctx.drawImage(image, food.x, food.y, 20, 20);
+
         ctx.beginPath();
         ctx.fillStyle = "red";
         ctx.arc(this.x, this.y, this.r, 0 , 2*Math.PI);
         ctx.fill();
         ctx.closePath();
     }
-}
+};
 const snake = {
     radius : 10,
     position : [{ x : cvs.width/2, y : cvs.height/2}],
@@ -79,7 +85,8 @@ const snake = {
     update : function() {
         if(frames % 6 == 0){
             if(foodEaten == true){
-
+                score++;
+                $("#current_score").html(score);
                 this.position.push({
                     x : this.position[this.position.length -1].x,
                     y : this.position[this.position.length -1].y
@@ -112,7 +119,7 @@ const snake = {
             }
             if(direction.current == direction.down) {
                 this.position[0].y += 20;
-            };
+            }
             if(getDistance(food.x,food.y,this.position[0].x, this.position[0].y) <= 2*food.r){
                 food.x = Math.random() * cvs.width;
                 food.y = Math.random() * cvs.height;
@@ -121,13 +128,13 @@ const snake = {
         }
 
     }
-}
+};
 
 function restart(){
   location.reload();
   return false;
 }
-
+let i = 0;
 function main() {
 
     ctx.clearRect(0, 0, cvs.width, cvs.height);
@@ -139,3 +146,23 @@ function main() {
 
 }
 requestAnimationFrame(main);
+
+$(document).ready(function() {
+    $("#restart_button").click(restart);
+
+    $.getJSON("assets/js/leaderboard.json", (data) => {
+            let tableTemplate = ``;
+            $.each(data.leaderboard, function (key, row) {
+                let rowTemplate = `
+                    <tr>
+                        <td>${row.pos}</td>
+                        <td>${row.name}</td>
+                        <td>${row.score}</td>
+                    </tr>`;
+                tableTemplate += rowTemplate;
+            });
+            $("#leaderboard-table").html(tableTemplate);
+        }
+    );
+});
+

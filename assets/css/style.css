@@ -24,7 +24,7 @@ header {
 }
 
 section {
-  height: 100vh;
+  /* height: 100vh; */
   /* font-family: 'Unkempt', cursive; */
   padding-top: 7rem;
 }
@@ -78,14 +78,35 @@ section {
   color:black;
 }
 /*------------------------instruction*/
+.game-container {
+  border: 5px solid var(--yellow-green);
+  border-radius: 10px;
+  padding: 20px 20px;
+  margin: 20px auto;
+}
+
 .ins{
   padding: 30px;
 }
 
+.game-title {
+  text-align: center;
+  font-family: 'Unkempt', cursive;
+  vertical-align: middle;
+}
+
 .game-area {
-  border: 5px solid var(--yellow-green);
+  padding: 10px;
+}
+
+.game-button-div {
+  align-items: center;
+}
+
+.game-button {
+  background-color: var(--yellow-green);
+  border-radius: 50%;
   margin: 10px;
-  border-radius: 10px;
 }
 
 .guide {
@@ -99,17 +120,10 @@ section {
   border-bottom: 5px solid var(--yellow-green);
 }
 
-.restart-btn {
-  font-size: 20px;
-  background-color: #96bb7c;
-  color: #000000;
-  margin: 10px;
-
-}
-/*----------------------scoreboard*/
-.scoreboard{
-  text-align: center;
-  color: white;
+@media (max-width: 992px) {
+  .leaderboard {
+    border-bottom: none;
+  }
 }
 
 /*-------------------------Game gameboard*/
@@ -117,16 +131,26 @@ section {
   display: block;
   margin: auto;
   width: 80%;
-  height: 50vh;
+  height: 90%;
   background-image: linear-gradient(
-    var(--rich-black-fogra-39) .1em,
-    transparent .1em
+    45deg, #808080 25%, 
+    transparent 25%
   ), linear-gradient(
-    90deg,
-    var(--rich-black-fogra-39) .1em,
-    transparent .1em
+    -45deg, #808080 25%, 
+    transparent 25%
+  ), linear-gradient(
+    45deg, 
+    transparent 75%, 
+    #808080 75%
+  ), linear-gradient(
+    -45deg, 
+    transparent 75%, 
+    #808080 75%
   );
-  background-size: 4em 4em;
+  background-size: 40px 40px;
+  background-position: 0 0, 0 20px, 20px -20px, -20px 0px;
+  border: 20px solid transparent;
+  border-image: url(../images/snake_border.png) 50 round;
 }
 
 /*------------------------Fun Fact section */
