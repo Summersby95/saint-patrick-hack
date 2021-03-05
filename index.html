@@ -49,15 +49,86 @@
   <main class="container-fluid">
     <!--Game-->
     <section id="id-game-container" class="row game-container justify-content-center">
-        <div class="col-lg-6 float-left guide">
-          <div class="ins">
-            <h4>How to Play?</h4>
-            <p> Just Use the Arrow keys.<br>Black is snake and Red is Apple.<br>Try to catch the red.</p><br>
-            <span><button class="restart-btn" onclick="restart()">Restart Game</button></span>
-          </div>
+        <div class="col-lg-8">
+            <div class="game-area">
+                <div class="row">
+                    <div class="col-lg-6 col-md-12 game-title">
+                        <h2>Paddy's Snakes</h2>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <h4>Current Score: 0</h4>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <button class="btn btn-success">
+                            <i class="fas fa-sync-alt"></i>
+                        </button>
+                        <button class="btn btn-success">
+                            <i class="fas fa-pause"></i>
+                        </button>
+                    </div>
+                </div>
+                <canvas id="gameboard"></canvas>
+            </div>
         </div>
-        <div class="col-lg-6">
-          <canvas id="gameboard" width="400" height="400"></canvas>
+        <div class="col-lg-4">
+            <div class="guide">
+                <div class="row">
+                    <div class="col-lg-12 col-md-6 leaderboard">
+                        <h4>Leaderboard</h4>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Name</th>
+                                    <th>Score</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>James</td>
+                                    <td>100</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Vijayalakshmi</td>
+                                    <td>99</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Fran</td>
+                                    <td>98</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Carolina</td>
+                                    <td>97</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>Taku</td>
+                                    <td>96</td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td>Helgurd</td>
+                                    <td>95</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-lg-12 col-md-6 ins">
+                        <h4>Instructions</h4>
+                        <ol>
+                            <li>Click the Start Button to start the game</li>
+                            <li>Use the arrow keys on your keyboard to move the snake</li>
+                            <li>Collect all the Leprechaun Gold and Guinness Pints!</li>
+                            <li>Don't run over yourself while you do!</li>
+                            <li>Have Fun!</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
     <!--About St Patricks Day-->
@@ -69,9 +140,8 @@
       <div class="col-12 text-center"><h2>Fun facts</h2></div>
     </section>
   </main>
-
   <!--Footer-->
-  <footer class="container-fluid fixed-bottom">
+  <footer class="container-fluid">
     <div id="footer-details" class="row">
       <div class="col">
         <ul class="list-inline social-links">

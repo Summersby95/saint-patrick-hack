@@ -1,13 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Unkempt&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
 
 :root {
   --paddygreen: #79d70f;
+  --dark-orange: #ff8811ff;
+  --magnolia: #e8ebf7ff;
+  --yellow-green: #8fc93aff;
+  --dark-liver-horses: #523a34ff;
+  --rich-black-fogra-39: #090c08ff; 
 }
 
 
 body{
-  background-color: var(--paddygreen);/*#81b214;*/
+  background-color: var(--magnolia);
   font-size: 1.2rem;
+  font-family: 'Noto Sans JP', sans-serif;
 }
 
 header {
@@ -18,13 +25,21 @@ header {
 
 section {
   height: 100vh;
-  font-family: 'Unkempt', cursive;
+  /* font-family: 'Unkempt', cursive; */
   padding-top: 7rem;
+}
+
+/*-------------------------NavBar*/
+.navbar-nav a {
+  text-align: right;
+  color: var(--magnolia);
 }
 
 /*-------------------------NavBar*/
 .navbar{
   font-family: 'Unkempt', cursive;
+  background-color: var(--yellow-green);
+  color: var(--magnolia);
   margin-bottom : 0;
   border: 0;
   display: -webkit-box;
@@ -35,10 +50,13 @@ section {
   padding: 0 1rem;
 }
 .navbar-brand{
+  color: var(--magnolia);
   padding-left: 15px;
   display: inline-block;
   font-size: 200%;
   font-weight: 600;
+  height: 50px;;
+  width: 150px;
   text-align: left;
   font-style: italic;
 }
@@ -61,13 +79,26 @@ section {
 }
 /*------------------------instruction*/
 .ins{
-  margin-top: 5rem;
-   margin-bottom: 1.25rem;
-   padding:0 .65rem;
+  padding: 30px;
 }
-h4, p{
-  text-align: center;
+
+.game-area {
+  border: 5px solid var(--yellow-green);
+  margin: 10px;
+  border-radius: 10px;
 }
+
+.guide {
+  border: 5px solid var(--yellow-green);
+  margin: 10px;
+  border-radius: 10px;
+}
+
+.leaderboard {
+  padding: 30px;
+  border-bottom: 5px solid var(--yellow-green);
+}
+
 .restart-btn {
   font-size: 20px;
   background-color: #96bb7c;
@@ -84,10 +115,18 @@ h4, p{
 /*-------------------------Game gameboard*/
 #gameboard{
   display: block;
-  border: 1px solid black;
-  margin-top: 70px;
-  margin-left: 100px;
-
+  margin: auto;
+  width: 80%;
+  height: 50vh;
+  background-image: linear-gradient(
+    var(--rich-black-fogra-39) .1em, 
+    transparent .1em
+  ), linear-gradient(
+    90deg, 
+    var(--rich-black-fogra-39) .1em,
+    transparent .1em
+  );
+  background-size: 4em 4em;
 }
 /*-------------------------Footer*/
 footer {
