@@ -3,8 +3,8 @@ const ctx = cvs.getContext("2d");
 const board_background = "white";
 let score=0;
 
-cvs.width = 400;
-cvs.height = 400;
+cvs.width = cvs.offsetWidth;
+cvs.height = cvs.offsetHeight;
 
 let frames = 0;
 

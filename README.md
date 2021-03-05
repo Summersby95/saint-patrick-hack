@@ -42,4 +42,8 @@ Given the St. Patrick's Day theme of the Hackathon, we decided to have some fun 
 
 ## Wireframes
 
-![Wireframe 1](/assets/images/Wireframe 1.png)
+Wireframe 1
+
+![Wireframe 1](/assets/images/Wireframe_1.png)
+
+Wireframe 2
