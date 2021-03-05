@@ -1,5 +1,25 @@
 /*jshint esversion: 6 */
 
+$(document).ready(function() {
+    $("#restart_button").click(restart);
+
+    $.getJSON("assets/js/leaderboard.json", (data) => {
+            let tableTemplate = ``;
+            $.each(data.leaderboard, function (key, row) {
+                let rowTemplate = `
+                    <tr>
+                        <td>${row.pos}</td>
+                        <td>${row.name}</td>
+                        <td>${row.score}</td>
+                    </tr>`;
+                tableTemplate += rowTemplate;
+            });
+            $("#leaderboard-table").html(tableTemplate);
+            cvs.height = cvs.offsetHeight;
+        }
+    );
+});
+
 const cvs = document.getElementById("gameboard");
 const ctx = cvs.getContext("2d");
 const board_background = "white";
@@ -102,6 +122,9 @@ const snake = {
             for( let i = this.position.length -1; i > 0;  i--){
                     if(this.position[0].x == this.position[i].x && this.position[0].y == this.position[i].y && this.position.length > 2) {
                         this.position.splice(1);
+                        showScoreModal(score);
+                        score = 0;
+                        $("#current_score").html(score);
                         break;
                     }
                     this.position[i].x = this.position[i-1].x;
@@ -134,7 +157,7 @@ function restart(){
   location.reload();
   return false;
 }
-let i = 0;
+
 function main() {
 
     ctx.clearRect(0, 0, cvs.width, cvs.height);
@@ -142,27 +165,42 @@ function main() {
     snake.draw();
     food.draw();
     frames ++;
-   requestAnimationFrame(main);
+    requestAnimationFrame(main);
 
 }
 requestAnimationFrame(main);
 
-$(document).ready(function() {
-    $("#restart_button").click(restart);
+$("#gameboard").click(function() {
+    $(document).keydown(function() {
+        preventScrollKeys(event);
+    });
+});
 
-    $.getJSON("assets/js/leaderboard.json", (data) => {
-            let tableTemplate = ``;
-            $.each(data.leaderboard, function (key, row) {
-                let rowTemplate = `
-                    <tr>
-                        <td>${row.pos}</td>
-                        <td>${row.name}</td>
-                        <td>${row.score}</td>
-                    </tr>`;
-                tableTemplate += rowTemplate;
-            });
-            $("#leaderboard-table").html(tableTemplate);
-        }
-    );
+let keys = {37: 1, 38: 1, 39: 1, 40: 1};
+    
+function preventDefault(e) {
+    e.preventDefault();
+}
+
+function preventScrollKeys(e) {
+    if (keys[e.keyCode]) {
+        preventDefault(e);
+        return false;
+    }
+}
+
+function showScoreModal(subScore) {
+    $('#scoreModal').modal('toggle');
+    $('#scoreDisplay').html(subScore + "!");
+}
+
+
+$("#scoreSubmitBtn").click(function() {
+    scoreName = $("#scoreName").val();
+    score = parseInt($("#scoreDisplay").html());
+    if (scoreName == "") {
+        alert("Name field cannot be blank!");
+        return false;
+    }
 });
 
