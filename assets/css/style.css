@@ -24,7 +24,7 @@ header {
 }
 
 section {
-  height: 100vh;
+  /* height: 100vh; */
   /* font-family: 'Unkempt', cursive; */
   padding-top: 7rem;
 }
@@ -78,6 +78,13 @@ section {
   color:black;
 }
 /*------------------------instruction*/
+.game-container {
+  border: 5px solid var(--yellow-green);
+  border-radius: 10px;
+  padding: 20px 20px;
+  margin: 20px auto;
+}
+
 .ins{
   padding: 30px;
 }
@@ -89,9 +96,7 @@ section {
 }
 
 .game-area {
-  border: 5px solid var(--yellow-green);
-  margin: 10px;
-  border-radius: 10px;
+  padding: 10px;
 }
 
 .game-button-div {
@@ -115,17 +120,10 @@ section {
   border-bottom: 5px solid var(--yellow-green);
 }
 
-.restart-btn {
-  font-size: 20px;
-  background-color: #96bb7c;
-  color: #000000;
-  margin: 10px;
-
-}
-/*----------------------scoreboard*/
-.scoreboard{
-  text-align: center;
-  color: white;
+@media (max-width: 992px) {
+  .leaderboard {
+    border-bottom: none;
+  }
 }
 
 /*-------------------------Game gameboard*/
@@ -133,16 +131,8 @@ section {
   display: block;
   margin: auto;
   width: 80%;
-  height: 50vh;
-  background-image: /*linear-gradient(
-    var(--rich-black-fogra-39) .1em,
-    transparent .1em
-  ), linear-gradient(
-    90deg,
-    var(--rich-black-fogra-39) .1em,
-    transparent .1em
-  );*/
-  linear-gradient(
+  height: 90%;
+  background-image: linear-gradient(
     45deg, #808080 25%, 
     transparent 25%
   ), linear-gradient(
