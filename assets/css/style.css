@@ -237,4 +237,35 @@ footer {
 }
 #footer-details{
     text-align: center;
-  }
+}
+
+/* Score Modal */
+
+#scoreModal {
+  text-align: center;
+  font-family: "Unkempt", cursive;
+  
+}
+
+#scoreModal .modal-header {
+  border-bottom: none;
+}
+
+#scoreModal .modal-footer {
+  border-top: none;
+}
+
+#scoreModal .modal-content {
+  border-radius: 50%;
+  background-color: var(--yellow-green);
+}
+
+#scoreModal .modal-footer button {
+  background-color: var(--dark-orange);
+  border-radius: 50%;
+}
+
+#scoreModal input {
+  width: 60%;
+  margin: auto;
+}
