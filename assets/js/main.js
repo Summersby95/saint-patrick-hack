@@ -204,3 +204,6 @@ $("#scoreSubmitBtn").click(function() {
     }
 });
 
+function pause(){
+    direction.current = 0;
+}
