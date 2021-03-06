@@ -204,6 +204,17 @@ $("#scoreSubmitBtn").click(function() {
     }
 });
 
+
+// Pause the game 
+
 function pause(){
-    direction.current = 0;
+    const pauseModal = document.getElementById('pause-modal');
+    pauseModal.classList.remove('hidden')
+    direction.current = 0;    
 }
+
+// Hide the modal and continue playing
+document.addEventListener('keydown', function finishPause(){
+    const pauseModal = document.getElementById('pause-modal');
+    pauseModal.classList.add('hidden')
+})

@@ -50,6 +50,10 @@
   <main class="container-fluid">
     <!--Game-->
     <section id="id-game-container" class="row game-container justify-content-center">
+        <div id="pause-modal" class="hidden">
+          <h1>Press any direction to continue</h1>
+        </div>
+
       <div class="col-lg-8 game-area">
         <div class="row">
           <div class="col-lg-6 col-md-12 game-title">
@@ -70,8 +74,9 @@
           </div>
         </div>
         <canvas id="gameboard"></canvas>
+        
       </div>
-      <div class="col-lg-4">
+      <div class="col-lg-4 leaderboard-instructions">
         <div class="row">
           <div class="col-lg-12 col-md-6 leaderboard">
             <h4>Leaderboard</h4>
@@ -91,9 +96,10 @@
           <div class="col-lg-12 col-md-6 ins">
             <h4>Instructions</h4>
             <ol>
-              <li>Click the Start Button to start the game</li>
+              <li>Press any arrow key to start the game</li>
               <li>Use the arrow keys on your keyboard to move the snake</li>
               <li>Collect all the Leprechaun Gold and Guinness Pints!</li>
+              <li>If you need a break press the Pause button, to play again press any arrow key.</li>
               <li>Don't run over yourself while you do!</li>
               <li>Have Fun!</li>
             </ol>
