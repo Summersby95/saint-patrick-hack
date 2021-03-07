@@ -29,6 +29,10 @@ section {
   padding-top: 7rem;
 }
 
+h2 {
+  font-family: "Unkempt", cursive;
+}
+
 /*-------------------------NavBar*/
 .navbar-nav a {
   text-align: right;
@@ -337,4 +341,36 @@ footer {
 
 .answer-button:hover {
   background-color: var(--dark-orange);
+}
+
+
+/* spotify container */
+
+.spotify-container {
+  text-align: center;
+  border: 5px solid var(--yellow-green);
+  padding: 10px 10px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+/* alert story */
+.story-alert {
+  font-family: "Unkempt", cursive;
+  text-align: center;
+  border: 2px solid var(--yellow-green);
+  background-color: rgba(143, 201, 58, .3);
+  color: green;
+  max-height: 300px;
+  margin: 10px 5px;
+  font-size: 28px;
+}
+
+.alert-image {
+  height: 90%;
+}
+
+.story-image-div {
+  height: auto;
+  max-height: 100px;
 }
