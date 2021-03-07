@@ -218,3 +218,19 @@ document.addEventListener('keydown', function finishPause(){
     const pauseModal = document.getElementById('pause-modal');
     pauseModal.classList.add('hidden')
 })
+
+// scroll back to top
+var mybutton = document.getElementById("top-btn");
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
