@@ -4,19 +4,19 @@ $(document).ready(function() {
     $("#restart_button").click(restart);
 
     $.getJSON("assets/js/leaderboard.json", (data) => {
-            let tableTemplate = ``;
-            $.each(data.leaderboard, function (key, row) {
-                let rowTemplate = `
+        let tableTemplate = ``;
+        $.each(data.leaderboard, function (key, row) {
+            let rowTemplate = `
                     <tr>
                         <td>${row.pos}</td>
                         <td>${row.name}</td>
                         <td>${row.score}</td>
                     </tr>`;
-                tableTemplate += rowTemplate;
-            });
-            $("#leaderboard-table").html(tableTemplate);
-            cvs.height = cvs.offsetHeight;
-        }
+            tableTemplate += rowTemplate;
+        });
+        $("#leaderboard-table").html(tableTemplate);
+        cvs.height = cvs.offsetHeight;
+    }
     );
 
     getQuiz(startQuiz);
@@ -25,7 +25,7 @@ $(document).ready(function() {
 const cvs = document.getElementById("gameboard");
 const ctx = cvs.getContext("2d");
 const board_background = "white";
-let score=0;
+let score = 0;
 
 cvs.width = cvs.offsetWidth;
 cvs.height = cvs.offsetHeight;
@@ -35,31 +35,31 @@ let frames = 0;
 let foodEaten = false;
 
 const direction = {
-    current : 0,
-    idle : 0,
-    right : 1,
-    down : 2,
-    left : 3,
-    up : 4
+    current: 0,
+    idle: 0,
+    right: 1,
+    down: 2,
+    left: 3,
+    up: 4
 };
 
-document.addEventListener("keydown", function(evt){
-    switch(evt.keyCode){
+document.addEventListener("keydown", function (evt) {
+    switch (evt.keyCode) {
         case 37:
             //move left
-            if(direction.current != direction.left && direction.current != direction.right) direction.current = direction.left;
+            if (direction.current != direction.left && direction.current != direction.right) direction.current = direction.left;
             break;
         case 38:
             //move up
-            if(direction.current != direction.up && direction.current != direction.down) direction.current = direction.up;
+            if (direction.current != direction.up && direction.current != direction.down) direction.current = direction.up;
             break;
         case 39:
             //move right
-            if(direction.current != direction.right && direction.current != direction.left) direction.current = direction.right;
+            if (direction.current != direction.right && direction.current != direction.left) direction.current = direction.right;
             break;
         case 40:
             //move down
-            if(direction.current != direction.down && direction.current != direction.up) direction.current = direction.down;
+            if (direction.current != direction.down && direction.current != direction.up) direction.current = direction.down;
             break;
     }
 
@@ -69,83 +69,82 @@ function getDistance(pointX1, pointY1, pointX2, pointY2) {
     let distanceX = pointX2 - pointX1;
     let distanceY = pointY2 - pointY1;
 
-   return Math.sqrt(Math.pow(distanceX,2) + Math.pow(distanceY,2));
+    return Math.sqrt(Math.pow(distanceX, 2) + Math.pow(distanceY, 2));
 }
 
 const food = {
-    x : cvs.width/4,
-    y : cvs.height/4,
-    r : 10,
+    x: cvs.width / 4,
+    y: cvs.height / 4,
+    r: 10,
 
-    draw : function(){
-        // let image = new Image();
-        // image.src="./assets/images/leprachaun.png";
-        // ctx.drawImage(image, food.x, food.y, 20, 20);
+    draw: function () {
+        let image = new Image();
+        image.src = "./assets/images/clover-icon.png";
 
         ctx.beginPath();
-        ctx.fillStyle = "red";
-        ctx.arc(this.x, this.y, this.r, 0 , 2*Math.PI);
-        ctx.fill();
+        ctx.drawImage(image, food.x, food.y, 35, 35);
+        ctx.arc(this.x, this.y, this.r, 0, 2 * Math.PI);
+
         ctx.closePath();
     }
 };
 const snake = {
-    radius : 10,
-    position : [{ x : cvs.width/2, y : cvs.height/2}],
+    radius: 10,
+    position: [{ x: cvs.width / 2, y: cvs.height / 2 }],
 
-    draw : function() {
+    draw: function () {
         ctx.fillStyle = "black";
-        for( let i = 0; i< this.position.length; i++){
+        for (let i = 0; i < this.position.length; i++) {
             let p = this.position[i];
             ctx.beginPath();
-            ctx.arc(p.x, p.y, this.radius, 0, 2*Math.PI);
+            ctx.arc(p.x, p.y, this.radius, 0, 2 * Math.PI);
             ctx.fill();
             ctx.closePath();
         }
     },
 
-    update : function() {
-        if(frames % 6 == 0){
-            if(foodEaten == true){
+    update: function () {
+        if (frames % 6 == 0) {
+            if (foodEaten == true) {
                 score++;
                 $("#current_score").html(score);
                 this.position.push({
-                    x : this.position[this.position.length -1].x,
-                    y : this.position[this.position.length -1].y
+                    x: this.position[this.position.length - 1].x,
+                    y: this.position[this.position.length - 1].y
                 });
                 foodEaten = false;
             }
 
-            if(this.position[0].x < 0 ) this.position[0].x = cvs.width - 10;
-            if(this.position[0].x > cvs.width ) this.position[0].x = 10;
-            if(this.position[0].y < 0 ) this.position[0].y = cvs.height - 10;
-            if(this.position[0].y > cvs.height ) this.position[0].y = 10;
+            if (this.position[0].x < 0) this.position[0].x = cvs.width - 10;
+            if (this.position[0].x > cvs.width) this.position[0].x = 10;
+            if (this.position[0].y < 0) this.position[0].y = cvs.height - 10;
+            if (this.position[0].y > cvs.height) this.position[0].y = 10;
 
-            for( let i = this.position.length -1; i > 0;  i--){
-                    if(this.position[0].x == this.position[i].x && this.position[0].y == this.position[i].y && this.position.length > 2) {
-                        this.position.splice(1);
-                        showScoreModal(score);
-                        score = 0;
-                        $("#current_score").html(score);
-                        break;
-                    }
-                    this.position[i].x = this.position[i-1].x;
-                    this.position[i].y = this.position[i-1].y;
+            for (let i = this.position.length - 1; i > 0; i--) {
+                if (this.position[0].x == this.position[i].x && this.position[0].y == this.position[i].y && this.position.length > 2) {
+                    this.position.splice(1);
+                    showScoreModal(score);
+                    score = 0;
+                    $("#current_score").html(score);
+                    break;
                 }
-            if(direction.current == direction.right) {
+                this.position[i].x = this.position[i - 1].x;
+                this.position[i].y = this.position[i - 1].y;
+            }
+            if (direction.current == direction.right) {
 
                 this.position[0].x += 20;
             }
-            if(direction.current == direction.left) {
+            if (direction.current == direction.left) {
                 this.position[0].x -= 20;
             }
-            if(direction.current == direction.up) {
+            if (direction.current == direction.up) {
                 this.position[0].y -= 20;
             }
-            if(direction.current == direction.down) {
+            if (direction.current == direction.down) {
                 this.position[0].y += 20;
             }
-            if(getDistance(food.x,food.y,this.position[0].x, this.position[0].y) <= 2*food.r){
+            if (getDistance(food.x, food.y, this.position[0].x, this.position[0].y) <= 2 * food.r) {
                 food.x = Math.random() * cvs.width;
                 food.y = Math.random() * cvs.height;
                 foodEaten = true;
@@ -155,9 +154,9 @@ const snake = {
     }
 };
 
-function restart(){
-  location.reload();
-  return false;
+function restart() {
+    location.reload();
+    return false;
 }
 
 function main() {
@@ -166,20 +165,20 @@ function main() {
     snake.update();
     snake.draw();
     food.draw();
-    frames ++;
+    frames++;
     requestAnimationFrame(main);
 
 }
 requestAnimationFrame(main);
 
-$("#gameboard").click(function() {
-    $(document).keydown(function() {
+$("#gameboard").click(function () {
+    $(document).keydown(function () {
         preventScrollKeys(event);
     });
 });
 
-let keys = {37: 1, 38: 1, 39: 1, 40: 1};
-    
+let keys = { 37: 1, 38: 1, 39: 1, 40: 1 };
+
 function preventDefault(e) {
     e.preventDefault();
 }
@@ -197,7 +196,7 @@ function showScoreModal(subScore) {
 }
 
 
-$("#scoreSubmitBtn").click(function() {
+$("#scoreSubmitBtn").click(function () {
     scoreName = $("#scoreName").val();
     score = parseInt($("#scoreDisplay").html());
     if (scoreName == "") {
@@ -209,14 +208,14 @@ $("#scoreSubmitBtn").click(function() {
 
 // Pause the game 
 
-function pause(){
+function pause() {
     const pauseModal = document.getElementById('pause-modal');
     pauseModal.classList.remove('hidden');
-    direction.current = 0;    
+    direction.current = 0;
 }
 
 // Hide the modal and continue playing
-document.addEventListener('keydown', function finishPause(){
+document.addEventListener('keydown', function finishPause() {
     const pauseModal = document.getElementById('pause-modal');
     pauseModal.classList.add('hidden');
 });
@@ -234,8 +233,8 @@ let questionObj;
 
 function getQuiz(callback) {
     $.getJSON("assets/js/questions.json", (data) => {
-            callback(data);
-        }
+        callback(data);
+    }
     );
 }
 
@@ -253,15 +252,15 @@ function loadQuestion() {
     questionObj = quizData.quiz[questionIndex];
     $("#question").html(questionObj.question);
     $("#quizImage").attr('src', questionObj.image);
-    $.each(questionObj.options, function (optionIndex, option) { 
-         $("#answerBtn"+optionIndex).html(option.answer);
-         $("#answerBtn"+optionIndex).val(optionIndex);
+    $.each(questionObj.options, function (optionIndex, option) {
+        $("#answerBtn" + optionIndex).html(option.answer);
+        $("#answerBtn" + optionIndex).val(optionIndex);
     });
-    
+
 }
 
 function getQuestionIndex() {
-    let questionIndex = Math.floor(Math.random()*10);
+    let questionIndex = Math.floor(Math.random() * 10);
     if (answeredQuestions.includes(questionIndex)) {
         return getQuestionIndex();
     } else {
@@ -282,7 +281,7 @@ function checkAnswer(subAnswer) {
             responseText = `Incorrect! The correct answer was '${questionObj.options[questionObj.correctAnswer].answer}'.`;
             responseColor = "Red";
         }
-        $.each($(".answer-button"), function (buttonIndex, buttonElement) { 
+        $.each($(".answer-button"), function (buttonIndex, buttonElement) {
             let buttonColor;
             if ($(buttonElement).val() == questionObj.correctAnswer) {
                 buttonColor = "Green";
@@ -303,7 +302,7 @@ function checkAnswer(subAnswer) {
             responseFunc = loadQuestion;
         }
         setTimeout(responseFunc, 5000);
-    } 
+    }
 }
 
 function endGame() {
@@ -313,7 +312,7 @@ function endGame() {
     $("#question").html(`Congratulations! You scored ${correctAnswers}/${totalQuestions}!`);
 }
 
-$(".answer-button").click(function() {
+$(".answer-button").click(function () {
     if (!answeredQuestions.includes(questionIndex)) {
         checkAnswer($(this).val());
     }
