@@ -218,11 +218,6 @@ function pause(){
 // Hide the modal and continue playing
 document.addEventListener('keydown', function finishPause(){
     const pauseModal = document.getElementById('pause-modal');
-<<<<<<< HEAD
-    pauseModal.classList.add('hidden')
-})
-*/
-=======
     pauseModal.classList.add('hidden');
 });
 
@@ -322,5 +317,4 @@ $(".answer-button").click(function() {
     if (!answeredQuestions.includes(questionIndex)) {
         checkAnswer($(this).val());
     }
-});
->>>>>>> 8490964513a8aad5ede3141cd2622392d759125e
+});*/
