@@ -1,6 +1,10 @@
 import { update as updateSnake, draw as drawSnake, SNAKE_SPEED, getSnakeHead, snakeIntersection } from './snake.js';
 import { update as updateFood, draw as drawFood } from './food.js';
 
+$(document).ready(function() {
+    getQuiz(startQuiz);
+});
+
 let lastRenderTime = 0;
 const gameBoard = document.getElementById('game-board')
 const pauseBtn = document.getElementById('pause_button');

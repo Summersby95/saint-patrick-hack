@@ -210,37 +210,34 @@ h2 {
 
 
 /*-------------------------Footer*/
+h5 {
+  font-family: "Unkempt", cursive;
+}
+
 footer {
-  /*margin: 0;*/
-  background-color:#335d2d;
-  height: 2.5rem;
-  padding: 0;
+  margin-top: 40px;
+  background-color: var(--yellow-green);
+  padding: 10px;
   bottom: 0;
   width: 100%;
-}
-.social-links{
-    padding-bottom: 1.25rem;
-    float: none;
+  text-align: center;
 }
 
-.social-links li a i {
-    height: 2rem;
-    width: 2rem;
-    padding: 0.75rem 0;
-    border-radius: 50%;
-    font-size: 1.25rem;
-    line-height: 0.625rem;
-    text-align: center;
-    color: #fff;
-    background-color: #000;
+footer ul {
+  padding: 0;
 }
 
-.list-inline-items {
-    padding: 0.625rem;
-    display: inline-block;
+.credit-list {
+  background-color: transparent;
+  margin: 0;
+  padding: 2px 2px;
+  font-size: small;
+  border-left: none;
+  border-right: none;
 }
-#footer-details{
-    text-align: center;
+
+.footer-div {
+  background-color: transparent;
 }
 
 /* Score Modal */
