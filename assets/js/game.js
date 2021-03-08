@@ -6,8 +6,10 @@ $(document).ready(function() {
 });
 
 let lastRenderTime = 0;
-const gameBoard = document.getElementById('game-board')
+const gameBoard = document.getElementById('game-board');
 const pauseBtn = document.getElementById('pause_button');
+const restartBtn = document.getElementById('restart_button');
+let scoreCard = document.getElementById('current_score');
 let gameOver = false;
 let score = 0;
 let pauseGame = false;
@@ -16,9 +18,9 @@ let pauseGame = false;
 function main(currentTime) {
     if(gameOver) {
         if(confirm('You lost. Press OK to restart.')) {
-            window.location = '/'
+            window.location = '/saint-patrick-hack';
         }
-        return
+        return;
     }
 
     window.requestAnimationFrame(main);
@@ -49,6 +51,7 @@ function update() {
     updateSnake();
     updateFood();
     checkDeath();
+    updateScore();
 }
 
 
@@ -63,6 +66,11 @@ function draw() {
 
 function checkDeath() {
     gameOver = snakeIntersection();
+}
+
+function updateScore() {
+    console.log(score);
+    scoreCard.innerText = score;
 }
 
 
@@ -184,3 +192,4 @@ $(".answer-button").click(function() {
         checkAnswer($(this).val());
     }
 });
+
