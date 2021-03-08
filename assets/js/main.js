@@ -1,5 +1,5 @@
 /*jshint esversion: 6 */
-
+/*
 $(document).ready(function() {
     $("#restart_button").click(restart);
 
@@ -218,3 +218,4 @@ document.addEventListener('keydown', function finishPause(){
     const pauseModal = document.getElementById('pause-modal');
     pauseModal.classList.add('hidden')
 })
+*/

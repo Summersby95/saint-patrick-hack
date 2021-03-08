@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>St.Patricks Day</title>
+  <script defer type="module" src="assets/js/game.js"></script>
   <link rel="icon" href="https://cdn3.iconfinder.com/data/icons/spring-2-1/30/Clover-512.png" type="image/icon type">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Gilda+Display&display=swap" rel="stylesheet">
@@ -49,12 +50,12 @@
   <!--Content-->
   <main class="container-fluid">
     <!--Game-->
-    <section id="id-game-container" class="row game-container justify-content-center">
-        <div id="pause-modal" class="hidden">
+    <section class="row game-container justify-content-center">
+        <div id="pause-modal" class="hidden col-12">
           <h1>Press any direction to continue</h1>
         </div>
 
-      <div class="col-lg-8 game-area">
+      <!--<div class="col-lg-8 game-area">
         <div class="row">
           <div class="col-lg-6 col-md-12 game-title">
             <h2>Paddy's Snakes</h2>
@@ -64,7 +65,7 @@
           </div>
           <div class="col-lg-3 col-md-6 game-button-div">
             
-            </button><button class="btn game-button" id="pause_button" onclick="pause()">
+            <button class="btn game-button" id="pause_button" onclick="pause()">
               <i class="fas fa-pause"></i>
             </button>
             <button class="btn game-button" id="restart_button">
@@ -75,8 +76,32 @@
         </div>
         <canvas id="gameboard"></canvas>
         
+      </div>-->
+      <div id="id-game-container" class="col-lg-8">
+
+        <div class="row">
+          <div class="col-lg-6 col-md-12 game-title">
+            <h2>Paddy's Snakes</h2>
+          </div>
+          <div class="col-lg-3 col-md-6 game-title">
+            <h4>Current Score: <span id="current_score">0</span></h4>
+          </div>
+          <div class="col-lg-3 col-md-6 game-button-div">
+          
+            <button class="btn game-button" id="pause_button">
+              <i class="fas fa-pause"></i>
+            </button>
+            <button class="btn game-button" id="restart_button">
+              <i class="fas fa-sync-alt"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="col-12 text-center snake-game">
+          <div id="game-board"></div>
+        </div>
       </div>
-      <div class="col-lg-4 leaderboard-instructions">
+      <div class="col-xl-4 leaderboard-instructions">
         <div class="row">
           <div class="col-lg-12 col-md-6 leaderboard">
             <h4>Leaderboard</h4>
@@ -107,6 +132,7 @@
         </div>
       </div>
     </section>
+
     <!--About St Patricks Day-->
     <section clss="container">
       <section id="id-about-stpaddy" class="row justify-content-center">

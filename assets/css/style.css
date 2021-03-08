@@ -291,3 +291,37 @@ footer {
 #pause-modal.hidden {
   display: none;
 }
+
+
+#id-game-container {
+  margin: 0;
+}
+
+
+#game-board {
+  width: 100vmin;
+  height: 80vmin; 
+  display: grid;
+  grid-template-rows: repeat(21, 1fr);
+  grid-template-columns: repeat(21, 1fr);
+  border: 20px solid transparent;
+  border-image: url(../images/snake-border.png) 50 round;
+
+}
+
+/* .snake-game {
+  border: 20px solid;
+  border-image: url(../images/snake-border.png) 50 round;
+} */
+
+.snake {
+  background-color: #335d2d;
+  border: .25vmin solid black;
+}
+
+.food {
+  background-image: url(../images/guiness_ico.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
