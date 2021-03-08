@@ -18,6 +18,8 @@ $(document).ready(function() {
             cvs.height = cvs.offsetHeight;
         }
     );
+
+    getQuiz(startQuiz);
 });
 
 const cvs = document.getElementById("gameboard");
@@ -209,13 +211,116 @@ $("#scoreSubmitBtn").click(function() {
 
 function pause(){
     const pauseModal = document.getElementById('pause-modal');
-    pauseModal.classList.remove('hidden')
+    pauseModal.classList.remove('hidden');
     direction.current = 0;    
 }
 
 // Hide the modal and continue playing
 document.addEventListener('keydown', function finishPause(){
     const pauseModal = document.getElementById('pause-modal');
+<<<<<<< HEAD
     pauseModal.classList.add('hidden')
 })
 */
+=======
+    pauseModal.classList.add('hidden');
+});
+
+
+
+// Quiz Functions
+
+let quizData;
+let totalQuestions;
+let correctAnswers;
+let answeredQuestions = [];
+let questionIndex;
+let questionObj;
+
+function getQuiz(callback) {
+    $.getJSON("assets/js/questions.json", (data) => {
+            callback(data);
+        }
+    );
+}
+
+function startQuiz(data) {
+    quizData = data;
+    totalQuestions = quizData.quiz.length;
+    correctAnswers = 0;
+    loadQuestion();
+}
+
+function loadQuestion() {
+    $("#question").css("color", "black");
+    $(".answer-button").css("background-color", "transparent");
+    questionIndex = getQuestionIndex();
+    questionObj = quizData.quiz[questionIndex];
+    $("#question").html(questionObj.question);
+    $("#quizImage").attr('src', questionObj.image);
+    $.each(questionObj.options, function (optionIndex, option) { 
+         $("#answerBtn"+optionIndex).html(option.answer);
+         $("#answerBtn"+optionIndex).val(optionIndex);
+    });
+    
+}
+
+function getQuestionIndex() {
+    let questionIndex = Math.floor(Math.random()*10);
+    if (answeredQuestions.includes(questionIndex)) {
+        return getQuestionIndex();
+    } else {
+        return questionIndex;
+    }
+}
+
+function checkAnswer(subAnswer) {
+    if (questionObj != undefined) {
+        let responseText;
+        let responseColor;
+        let responseFunc;
+        if (questionObj.correctAnswer == subAnswer) {
+            correctAnswers++;
+            responseText = "Correct!";
+            responseColor = "Green";
+        } else {
+            responseText = `Incorrect! The correct answer was '${questionObj.options[questionObj.correctAnswer].answer}'.`;
+            responseColor = "Red";
+        }
+        $.each($(".answer-button"), function (buttonIndex, buttonElement) { 
+            let buttonColor;
+            if ($(buttonElement).val() == questionObj.correctAnswer) {
+                buttonColor = "Green";
+            } else {
+                buttonColor = "Red";
+            }
+            $(buttonElement).css("background-color", buttonColor);
+        });
+
+        $("#question").html(responseText);
+        $("#question").css("color", responseColor);
+
+        answeredQuestions.push(questionIndex);
+
+        if (answeredQuestions.length == totalQuestions) {
+            responseFunc = endGame;
+        } else {
+            responseFunc = loadQuestion;
+        }
+        setTimeout(responseFunc, 5000);
+    } 
+}
+
+function endGame() {
+    $(".answer-button").hide();
+    $("#quizImage").attr('src', "assets/images/parade.jpg");
+    $("#question").css("color", "Green");
+    $("#question").html(`Congratulations! You scored ${correctAnswers}/${totalQuestions}!`);
+}
+
+$(".answer-button").click(function() {
+    if (!answeredQuestions.includes(questionIndex)) {
+        checkAnswer($(this).val());
+    }
+});
+>>>>>>> 8490964513a8aad5ede3141cd2622392d759125e

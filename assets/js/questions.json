@@ -1,0 +1,234 @@
+{
+    "quiz": [
+        {
+            "question": "How many leaves does a shamrock have?",
+            "image": "assets/images/plant.jpg",
+            "options": [
+                {
+                    "id": 0,
+                    "answer": "Two"
+                },
+                {
+                    "id": 1,
+                    "answer": "Three"
+                },
+                {
+                    "id": 2,
+                    "answer": "Four"
+                },
+                {
+                    "id": 3,
+                    "answer": "Five"
+                }
+            ],
+            "correctAnswer": 1
+        },
+        {
+            "question": "What color was originally associated with St. Patrick?",
+            "image": "assets/images/st-patrick.jpg",
+            "options": [
+                {
+                    "id": 0,
+                    "answer": "Blue"
+                },
+                {
+                    "id": 1,
+                    "answer": "Red"
+                },
+                {
+                    "id": 2,
+                    "answer": "Green"
+                },
+                {
+                    "id": 3,
+                    "answer": "Orange"
+                }
+            ],
+            "correctAnswer": 0
+        },
+        {
+            "question": "Which of these is a nickname for Ireland?",
+            "image": "assets/images/ireland.jpg",
+            "options": [
+                {
+                    "id": 0,
+                    "answer": "Snake-free Island"
+                },
+                {
+                    "id": 1,
+                    "answer": "Angel Island"
+                },
+                {
+                    "id": 2,
+                    "answer": "Island of Dolphins"
+                },
+                {
+                    "id": 3,
+                    "answer": "The Emerald Isle"
+                }
+            ],
+            "correctAnswer": 3
+        },
+        {
+            "question": "What would you find a leprachaun hiding at the end of a rainbow?",
+            "image": "assets/images/rainbow.jpg",
+            "options": [
+                {
+                    "id": 0,
+                    "answer": "Marshmallows"
+                },
+                {
+                    "id": 1,
+                    "answer": "A pot of gold"
+                },
+                {
+                    "id": 2,
+                    "answer": "Shamrocks"
+                },
+                {
+                    "id": 3,
+                    "answer": "Sandwiches"
+                }
+            ],
+            "correctAnswer": 1
+        },
+        {
+            "question": "What is said to have been St. Patrick's real name?",
+            "image": "assets/images/st-patrick-1.jpg",
+            "options": [
+                {
+                    "id": 0,
+                    "answer": "Maewyn Succat"
+                },
+                {
+                    "id": 1,
+                    "answer": "Paddy O'Leary"
+                },
+                {
+                    "id": 2,
+                    "answer": "Patrick Walsh"
+                },
+                {
+                    "id": 3,
+                    "answer": "Sean Fitzpatrick"
+                }
+            ],
+            "correctAnswer": 0
+        },
+        {
+            "question": "Where in the world was St. Patrick's Day first celebrated?",
+            "image": "assets/images/boston-parade.jpg",
+            "options": [
+                {
+                    "id": 0,
+                    "answer": "Boston, Massachusetts"
+                },
+                {
+                    "id": 1,
+                    "answer": "Dublin, Ireland"
+                },
+                {
+                    "id": 2,
+                    "answer": "Glasgow, Scotland"
+                },
+                {
+                    "id": 3,
+                    "answer": "Liverpool, England"
+                }
+            ],
+            "correctAnswer": 0
+        },
+        {
+            "question": "Where are the remains of St. Patrick said to be located?",
+            "image": "assets/images/patrick-grave.jpg",
+            "options": [
+                {
+                    "id": 0,
+                    "answer": "Cavan Cathedral"
+                },
+                {
+                    "id": 1,
+                    "answer": "Christchurch Cathedral, Dublin"
+                },
+                {
+                    "id": 2,
+                    "answer": "Down Cathedral, Downpatrick"
+                },
+                {
+                    "id": 3,
+                    "answer": "St. Anne's Cathedral, Belfast"
+                }
+            ],
+            "correctAnswer": 2
+        },
+        {
+            "question": "When did St. Patrick come to Ireland?",
+            "image": "assets/images/st-patrick-2.jpg",
+            "options": [
+                {
+                    "id": 0,
+                    "answer": "382"
+                },
+                {
+                    "id": 1,
+                    "answer": "422"
+                },
+                {
+                    "id": 2,
+                    "answer": "432"
+                },
+                {
+                    "id": 3,
+                    "answer": "523"
+                }
+            ],
+            "correctAnswer": 2
+        },
+        {
+            "question": "Which country is known as the Emerald Isle of the Carribbean, and also has a public holiday on March 17th?",
+            "image": "assets/images/montserrat.jpg",
+            "options": [
+                {
+                    "id": 0,
+                    "answer": "Belize"
+                },
+                {
+                    "id": 1,
+                    "answer": "Dominican Republic"
+                },
+                {
+                    "id": 2,
+                    "answer": "Montserrat"
+                },
+                {
+                    "id": 3,
+                    "answer": "British Virgin Islands"
+                }
+            ],
+            "correctAnswer": 2
+        },
+        {
+            "question": "According to legend, what should you never do if you catch a leprechaun?",
+            "image": "assets/images/leprachaun.png",
+            "options": [
+                {
+                    "id": 0,
+                    "answer": "Kiss him"
+                },
+                {
+                    "id": 1,
+                    "answer": "Take your eyes off him"
+                },
+                {
+                    "id": 2,
+                    "answer": "Tell your friends"
+                },
+                {
+                    "id": 3,
+                    "answer": "Follow him"
+                }
+            ],
+            "correctAnswer": 1
+        }
+    ]
+}

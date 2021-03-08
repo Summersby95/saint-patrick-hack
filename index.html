@@ -5,8 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>St.Patricks Day</title>
-  <script defer type="module" src="assets/js/game.js"></script>
+  <title>Paddy's Quest</title>
+  <script src="assets/js/game.js" defer type="module"></script>
   <link rel="icon" href="https://cdn3.iconfinder.com/data/icons/spring-2-1/30/Clover-512.png" type="image/icon type">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Gilda+Display&display=swap" rel="stylesheet">
@@ -23,7 +23,7 @@
     <div class="row align-items-center justify-content-center ">
       <div class="col-12">
         <nav class="navbar navbar-expand-md navbar-light">
-          <a class="navbar navbar-brand" href="index.html">St. Patricks Day</a>
+          <a class="navbar navbar-brand" href="index.html">Paddy's Quest</a>
           <button class="navbar-toggler" aria-expanded="false" aria-controls="navbarNavDropDown" aria-label="Toggle navigation" type="button" data-target="#navbarNavDropDown" data-toggle="collapse">
             <span class="custom-navbar-toggler-icon">
               <i class="fas fa-bars"></i>
@@ -50,8 +50,22 @@
   <!--Content-->
   <main class="container-fluid">
     <!--Game-->
-    <section class="row game-container justify-content-center">
-        <div id="pause-modal" class="hidden col-12">
+    <div class="alert story-alert row" role="alert">
+      <div class="col-2 story-image-div">
+        <img src="assets/images/st_patrick_alert.png" alt="St. Patrick Icon" class="alert-image">
+      </div>
+      <div class="col-8 story-text-div">
+        <p>
+          Paddy needs help luring the snakes off the island! Help steer the snakes to the 
+          Guinness and Gold to get them off the island of Ireland!
+        </p>
+      </div>
+      <div class="col-2 story-image-div">
+        <img src="assets/images/st_patrick_alert.png" alt="St. Patrick Icon" class="alert-image">
+      </div>
+    </div>
+    <section id="id-game-container" class="row game-container justify-content-center">
+        <div id="pause-modal" class="hidden">
           <h1>Press any direction to continue</h1>
         </div>
 
@@ -134,21 +148,65 @@
     </section>
 
     <!--About St Patricks Day-->
-    <section clss="container">
-      <section id="id-about-stpaddy" class="row justify-content-center">
-        <div class="col-12 text-center">
-          <h2>About St Patricks day</h2>
+    <div class="alert story-alert row" role="alert">
+      <div class="col-2 story-image-div">
+        <img src="assets/images/st_patrick_alert.png" alt="St. Patrick Icon" class="alert-image">
+      </div>
+      <div class="col-8 story-text-div">
+        <p>
+          Paddy needs to brush up on his history! Help him learn by watching this video!
+        </p>
+      </div>
+      <div class="col-2 story-image-div">
+        <img src="assets/images/st_patrick_alert.png" alt="St. Patrick Icon" class="alert-image">
+      </div>
+    </div>
+    <section id="id-about-stpaddy" class="justify-content-center spotify-container">
+      <div class="text-center">
+        <h2>About St Patricks day</h2>
+      </div>
+      <div class="">
+        <div class=" w100">
+          <iframe width="100%" height="600" src="https://www.youtube.com/embed/A6ZbN1R7Bos" frameborder="5" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
-        <div class="col-10 ">
-          <div class=" w100">
-            <iframe width="100%" height="600" src="https://www.youtube.com/embed/A6ZbN1R7Bos" frameborder="5" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
-        </div>
-      </section>
+      </div>
+    </section>
+    <!-- Spotify Playlist-->
+    <div class="alert story-alert row" role="alert">
+      <div class="col-2 story-image-div">
+        <img src="assets/images/st_patrick_alert.png" alt="St. Patrick Icon" class="alert-image">
+      </div>
+      <div class="col-8 story-text-div">
+        <p>
+          After a long day saving Ireland, Paddy likes to relax with some festive tunes. 
+          Checkout his collection below!
+        </p>
+      </div>
+      <div class="col-2 story-image-div">
+        <img src="assets/images/st_patrick_alert.png" alt="St. Patrick Icon" class="alert-image">
+      </div>
+    </div>
+    <section class="spotify-container">
+      <h2>Paddy's Tunes</h2>
+      <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DWSCaDvxADWZT" width="100%" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
     </section>
     <!--About -->
-    <section id="" class="row justify-content-center">
-      <div class="col-12 text-center">
+    <div class="alert story-alert row" role="alert">
+      <div class="col-2 story-image-div">
+        <img src="assets/images/st_patrick_alert.png" alt="St. Patrick Icon" class="alert-image">
+      </div>
+      <div class="col-8 story-text-div">
+        <p>
+          Paddy is very forgetful in his old age and he likes to keep lists! 
+          Checkout these fun facts about his holiday!
+        </p>
+      </div>
+      <div class="col-2 story-image-div">
+        <img src="assets/images/st_patrick_alert.png" alt="St. Patrick Icon" class="alert-image">
+      </div>
+    </div>
+    <section id="" class="spotify-container justify-content-center">
+      <div class="text-center">
         <h2>Fun Fact About St. Patrick's Day</h2>
       </div>
       <div class="container demo">
@@ -290,7 +348,21 @@
 
     </section>
     <!-- activity for st patricks day in a lockdown -->
-    <section clss="container">
+    <div class="alert story-alert row" role="alert">
+      <div class="col-2 story-image-div">
+        <img src="assets/images/st_patrick_alert.png" alt="St. Patrick Icon" class="alert-image">
+      </div>
+      <div class="col-8 story-text-div">
+        <p>
+          When Paddy is not saving Ireland, he likes doing a bunch of different things! 
+          Checkout some of his favourites that you can do at home!
+        </p>
+      </div>
+      <div class="col-2 story-image-div">
+        <img src="assets/images/st_patrick_alert.png" alt="St. Patrick Icon" class="alert-image">
+      </div>
+    </div>
+    <section class="spotify-container">
       <div class="col-12 text-center">
         <h2>Activity For St Patricks Day</h2>
       </div>
@@ -373,6 +445,46 @@
         </div>
       </div>
 
+    </section>
+    <!-- quiz -->
+    <div class="alert story-alert row" role="alert">
+      <div class="col-2 story-image-div">
+        <img src="assets/images/st_patrick_alert.png" alt="St. Patrick Icon" class="alert-image">
+      </div>
+      <div class="col-8 story-text-div">
+        <p>
+          Paddy is trying to find his most loyal followers! Prove you are one 
+          by challenging yourself to the quiz below!
+        </p>
+      </div>
+      <div class="col-2 story-image-div">
+        <img src="assets/images/st_patrick_alert.png" alt="St. Patrick Icon" class="alert-image">
+      </div>
+    </div>
+    <section class="quiz-container">
+      <h3>Quiz</h3>
+      <div class="question-div">
+        <div class="image-div">
+          <img src="assets/images/brunch.jpg" id="quizImage" alt="Quiz Image" class="img-fluid rounded quiz-image">
+        </div>
+        <div class="question">
+          <h4 id="question">What food is this?</h4>
+        </div>
+      </div>
+      <div class="row answer-div">
+        <div class="answer col-lg-6 col-md-6 col-sm-12">
+          <button class="btn answer-button" id="answerBtn0">Cabbage</button>
+        </div>
+        <div class="answer col-lg-6 col-md-6 col-sm-12">
+          <button class="btn answer-button" id="answerBtn1">Bread</button>
+        </div>
+        <div class="answer col-lg-6 col-md-6 col-sm-12">
+          <button class="btn answer-button" id="answerBtn2">Pizza</button>
+        </div>
+        <div class="answer col-lg-6 col-md-6 col-sm-12">
+          <button class="btn answer-button" id="answerBtn3">Guinness</button>
+        </div>
+      </div>
     </section>
   </main>
   <!--Footer-->
