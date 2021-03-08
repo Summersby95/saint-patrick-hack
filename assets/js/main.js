@@ -317,4 +317,5 @@ $(".answer-button").click(function() {
     if (!answeredQuestions.includes(questionIndex)) {
         checkAnswer($(this).val());
     }
-});*/
+});
+*/
